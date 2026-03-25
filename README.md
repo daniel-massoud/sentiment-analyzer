@@ -1,44 +1,40 @@
 # Sentiment Analyzer
 
-A command-line sentiment analysis tool built with Python and HuggingFace Transformers.
+A web app that analyzes the sentiment of any text using DistilBERT.
+Enter a sentence and it tells you whether the sentiment is positive 
+or negative, along with a confidence score.
 
-Give it any text and it tells you whether the sentiment is positive or negative,
-along with a confidence score.
+**Live demo:** https://huggingface.co/spaces/daniel-massoud/sentiment-analyzer
+
+---
 
 ## How it works
 
-Uses DistilBERT fine-tuned on SST-2 — a lightweight transformer model trained on
-movie reviews. The model runs locally on your machine, no API calls needed.
+Uses DistilBERT fine-tuned on SST-2 — a transformer model trained on
+movie reviews. The model runs on HuggingFace infrastructure, no setup needed.
 
-## Setup
-
-Clone the repo and install dependencies:
+## Run it locally
 
     git clone https://github.com/daniel-massoud/sentiment-analyzer
     cd sentiment-analyzer
     python -m venv venv
     venv\Scripts\activate
-    pip install -r requirements.txt
-
-## Run it
-
-    python app.py
+    pip install transformers torch gradio
+    python app_ui.py
 
 ## Example output
 
-    You: I love working on this project
-    Result: POSITIVE — 99.8% confidence
+    Input:  "I love working on this project"
+    Output: Positive — 99.8% confidence
 
-    You: This is the worst experience I have ever had
-    Result: NEGATIVE — 99.9% confidence
+    Input:  "This is the worst experience I have ever had"
+    Output: Negative — 99.9% confidence
 
 ## Limitations
 
-- Model was trained on English text only. Performance degrades on other languages.
-- Binary output only (positive/negative). Neutral detection is unreliable.
+- Trained on English text only, degrades on other languages
+- Binary classification only — positive or negative, no neutral
 
-## Tech
+## Tech stack
 
-- Python
-- HuggingFace Transformers
-- DistilBERT (distilbert-base-uncased-finetuned-sst-2-english)
+Python · HuggingFace Transformers · DistilBERT · Gradio
