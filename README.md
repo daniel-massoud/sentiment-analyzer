@@ -10,7 +10,7 @@ or negative, along with a confidence score.
 
 ## How it works
 
-Uses DistilBERT fine-tuned on SST-2 — a transformer model trained on
+Uses DistilBERT fine-tuned on SST-2, a transformer model trained on
 movie reviews. The model runs on HuggingFace infrastructure, no setup needed.
 
 ## Run it locally
@@ -25,15 +25,15 @@ movie reviews. The model runs on HuggingFace infrastructure, no setup needed.
 ## Example output
 
     Input:  "I love working on this project"
-    Output: Positive — 99.8% confidence
+    Output: Positive  99.8% confidence
 
     Input:  "This is the worst experience I have ever had"
-    Output: Negative — 99.9% confidence
+    Output: Negative  99.9% confidence
 
 ## Limitations
 
 - Trained on English text only, degrades on other languages
-- Binary classification only — positive or negative, no neutral
+- Binary classification only.. positive or negative, no neutral
 
 ## Tech stack
 
